@@ -1,0 +1,79 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwepf4cjfm684"]
+
+[ext_resource type="Texture2D" uid="uid://bg3hn0qbyx6bs" path="res://Assets/Tiles/Tile (1).png" id="1_3utrl"]
+[ext_resource type="Texture2D" uid="uid://dgig5sf20lhtp" path="res://Assets/Tiles/Tile (4).png" id="2_etlwh"]
+[ext_resource type="Texture2D" uid="uid://b01ub23ouhdmw" path="res://Assets/Tiles/Tile (7).png" id="3_l0cnv"]
+[ext_resource type="Texture2D" uid="uid://clhmykt7inwv2" path="res://Assets/Tiles/Tile (8).png" id="4_2kcyg"]
+[ext_resource type="Texture2D" uid="uid://glxxv1iaq2bt" path="res://Assets/Tiles/Acid (1).png" id="5_vx4n3"]
+[ext_resource type="Texture2D" uid="uid://bnytatv3iukxl" path="res://Assets/Tiles/Acid (2).png" id="6_8gka8"]
+[ext_resource type="Texture2D" uid="uid://ddcnagfl0i1o2" path="res://Assets/Tiles/Spike.png" id="7_sjfu6"]
+[ext_resource type="PackedScene" uid="uid://bkdx3o1h65c48" path="res://Scenes/spiderobot.tscn" id="8_etlwh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2vk08"]
+texture = ExtResource("1_3utrl")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-127.5, -127.5, 127.5, -127.5, 127.5, 127.5, -127.5, 127.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syre4"]
+texture = ExtResource("2_etlwh")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-127.5, -127.5, 127.5, -127.5, 127.5, 127.5, -127.5, 127.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obgaq"]
+texture = ExtResource("3_l0cnv")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-127.5, -127.5, 127.5, -127.5, 127.5, 127.5, -127.5, 127.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hwjf"]
+texture = ExtResource("4_2kcyg")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-127.5, -127.5, 127.5, -127.5, 127.5, 127.5, -127.5, 127.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l4t1"]
+texture = ExtResource("5_vx4n3")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6yws"]
+texture = ExtResource("6_8gka8")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-127.5, -127.5, 127.5, -127.5, 127.5, 127.5, -127.5, 127.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pmlp"]
+texture = ExtResource("7_sjfu6")
+texture_region_size = Vector2i(255, 255)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-127.5, -127.5, 127.5, -127.5, 127.5, 127.5, -127.5, 127.5)
+
+[sub_resource type="TileSet" id="TileSet_h14n0"]
+tile_size = Vector2i(255, 255)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2vk08")
+sources/1 = SubResource("TileSetAtlasSource_syre4")
+sources/2 = SubResource("TileSetAtlasSource_obgaq")
+sources/3 = SubResource("TileSetAtlasSource_4hwjf")
+sources/4 = SubResource("TileSetAtlasSource_8l4t1")
+sources/5 = SubResource("TileSetAtlasSource_o6yws")
+sources/6 = SubResource("TileSetAtlasSource_2pmlp")
+
+[node name="main game (scene 1)" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_h14n0")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 65535, 0, 0, 65534, 0, 0, 65533, 0, 0, 65532, 0, 0, 65531, 0, 0, -65532, 6, 0, -65533, 6, 0, -65531, 6, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, -6, 1, 0, 65530, 1, 0, -65542, 1, 0, -196614, 1, 0, -131078, 1, 0, -65534, 1, 0, -131070, 1, 0, -196606, 1, 0, -262142, 1, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(682, -760)
+zoom = Vector2(0.2, 0.2)
+
+[node name="Spiderobot" parent="." instance=ExtResource("8_etlwh")]
+position = Vector2(-661, -38)
+
+[node name="Spiderobot2" parent="." instance=ExtResource("8_etlwh")]
+position = Vector2(-22, -82)
