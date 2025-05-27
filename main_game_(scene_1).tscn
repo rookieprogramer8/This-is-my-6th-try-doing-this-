@@ -74,3 +74,6 @@ zoom = Vector2(0.2, 0.2)
 
 [node name="Spiderobot" parent="." instance=ExtResource("8_etlwh")]
 position = Vector2(-661, -38)
+
+[node name="Spiderobot2" parent="." instance=ExtResource("8_etlwh")]
+position = Vector2(-22, -82)

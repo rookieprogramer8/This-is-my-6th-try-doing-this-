@@ -122,6 +122,12 @@ frame_progress = 0.646082
 position = Vector2(122, -51)
 shape = SubResource("CircleShape2D_oss8c")
 
+[node name="Area2D2" parent="." instance=ExtResource("2_dm7bn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(122, -51)
+shape = SubResource("CircleShape2D_oss8c")
+
 [node name="raycastright" type="RayCast2D" parent="."]
 position = Vector2(112, -55)
 target_position = Vector2(126, 6)
